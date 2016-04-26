@@ -2,6 +2,7 @@
 
 from os import walk
 from os import rename
+from os import path
 from pynstagram import client
 import random
 import logging
@@ -12,12 +13,13 @@ username = "xxx"
 password = "xxx"
 
 
-origin = "./to_post/"
-posted_destination = "./posted/"
+file_dir = path.dirname(__file__)
+origin = file_dir+"/to_post/"
+posted_destination = file_dir+"/posted/"
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)s %(message)s',
-                    filename='./log.log',
+                    filename=file_dir+'log.log',
                     filemode='a')
 
 f = []
